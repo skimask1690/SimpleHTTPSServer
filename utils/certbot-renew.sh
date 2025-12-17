@@ -5,6 +5,6 @@ if [[ " $* " == *" --dry-run "* ]]; then
 fi
 
 sudo certbot renew \
-  --manual-auth-hook /etc/letsencrypt/certbot-dynu-auth.sh \
-  --manual-cleanup-hook /etc/letsencrypt/certbot-dynu-cleanup.sh \
+  --manual-auth-hook ./certbot-dynu-auth.sh \
+  --manual-cleanup-hook ./certbot-dynu-cleanup.sh \
   $DRY_RUN
