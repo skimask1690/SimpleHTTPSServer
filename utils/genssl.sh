@@ -22,11 +22,10 @@ csr_file="cert.csr"
 
 generate_cert() {
     echo
-    read -p "Enter Common Name (CN) for the certificate: " cn_input
-    cn="/CN=${cn_input:-}"
+    IFS= read -p "Enter Common Name (CN) for the certificate: " cn_input
     echo
-    openssl req -new -key "$key_file" -out "$csr_file" -subj "$cn"
-    openssl x509 -req -in "$csr_file" -signkey "$key_file" -not_before 19700101000000Z -not_after 20901231000000Z -out "$cert_file"
+    openssl req -new -key "$key_file" -out "$csr_file" -subj "/CN=$cn_input"
+    openssl x509 -req -in "$csr_file" -signkey "$key_file" -not_before 19700101000000Z -not_after 20901231000000Z -out >
     rm -f "$csr_file"
     echo
     echo "$1 certificate generated: $cert_file / $key_file"
