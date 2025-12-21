@@ -16,8 +16,8 @@ echo
 read -p "Enter choice [1 or 2]: " cert_type
 echo
 
-key_file="fullchain.pem"
-cert_file="privkey.pem"
+key_file="privkey.pem"
+cert_file="fullchain.pem"
 csr_file="cert.csr"
 
 generate_cert() {
