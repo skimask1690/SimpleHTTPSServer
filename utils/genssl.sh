@@ -1,4 +1,4 @@
-#!/bin/bash
+how to make this take a space as the input for the cn: #!/bin/bash
 
 installed=$(openssl version | cut -d' ' -f2)
 
@@ -25,7 +25,7 @@ generate_cert() {
     IFS= read -p "Enter Common Name (CN) for the certificate: " cn_input
     echo
     openssl req -new -key "$key_file" -out "$csr_file" -subj "/CN=$cn_input"
-    openssl x509 -req -in "$csr_file" -signkey "$key_file" -not_before 19700101000000Z -not_after 20901231000000Z -out >
+    openssl x509 -req -in "$csr_file" -signkey "$key_file" -not_before 19700101000000Z -not_after 20901231000000Z -out "$cert_file"
     rm -f "$csr_file"
     echo
     echo "$1 certificate generated: $cert_file / $key_file"
