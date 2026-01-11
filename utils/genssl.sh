@@ -1,4 +1,4 @@
-how to make this take a space as the input for the cn: #!/bin/bash
+#!/bin/bash
 
 installed=$(openssl version | cut -d' ' -f2)
 
