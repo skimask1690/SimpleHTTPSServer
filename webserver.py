@@ -7,7 +7,7 @@ import fnmatch
 DIRECTORY = "webroot"
 CERT_FILE = "fullchain.pem"
 KEY_FILE = "privkey.pem"
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 PORT = 443
 
 SCRIPT_DIR = Path(__file__).resolve().parent
